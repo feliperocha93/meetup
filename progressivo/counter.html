@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iteris | Meetup Vue.js e as computeds properties</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <span id="display">{{ counter }}</span>
+      <div class="buttons">
+        <button @click="counter++">+</button>
+        <button @click="counter--">-</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          title: "Contador",
+          counter: 0,
+        },
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  #app {
+    width: 300px;
+    margin: 60px auto;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 60px;
+  }
+
+  #display {
+    display: block;
+    text-align: center;
+    font-size: 60px;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    margin-top: 60px;
+  }
+
+  .buttons button {
+    height: 40px;
+    font-size: 20px;
+  }
+</style>
