@@ -1,12 +1,12 @@
 <template>
   <div class="flexbox">
     <div class="flex-item">
-      <input type="text" />
-      <button @click="deposit">Depositar</button>
+      <input type="text" v-model="depositValue" />
+      <button @click="deposit(depositValue)">Depositar</button>
     </div>
     <div class="flex-item">
-      <input type="text" />
-      <button @click="withdraw">Sacar</button>
+      <input type="text" v-model="withdrawValue" />
+      <button @click="withdraw(withdrawValue)">Sacar</button>
     </div>
   </div>
 </template>
@@ -15,6 +15,10 @@
 import { mapActions } from "vuex";
 export default {
   name: "UsingVuex",
+  data: () => ({
+    depositValue: 0,
+    withdrawValue: 0,
+  }),
   methods: {
     ...mapActions({
       deposit: "deposit",

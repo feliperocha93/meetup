@@ -16,9 +16,9 @@
       <ComputedVsWatchers class="container" />
     </article>
 
-    <!-- <article class="card">
+    <article class="card">
       <UsingVuex />
-    </article> -->
+    </article>
   </section>
 </template>
 
@@ -26,7 +26,7 @@
 import ComputedProperties from "./components/ComputedProperties.vue";
 import ComputedVsMethods from "./components/ComputedVsMethods.vue";
 import ComputedVsWatchers from "./components/ComputedVsWatchers.vue";
-// import UsingVuex from "./components/UsingVuex.vue";
+import UsingVuex from "./components/UsingVuex.vue";
 
 export default {
   name: "App",
@@ -34,7 +34,7 @@ export default {
     ComputedProperties,
     ComputedVsMethods,
     ComputedVsWatchers,
-    // UsingVuex,
+    UsingVuex,
   },
   data: () => ({
     title: "Componente Single File",
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="css">
-/* #componente-single-file {
+#componente-single-file {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
@@ -73,5 +73,5 @@ ul {
 
 .container {
   padding: 2px 16px;
-} */
+}
 </style>
