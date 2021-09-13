@@ -1,27 +1,32 @@
 <template>
   <section id="componente-single-file">
-    <article>
-      <input type="text" v-model="balance" />
+    <article class="card">
+      <ComputedProperties
+        :firstName="firstName"
+        :lastName="lastName"
+        class="container"
+      />
     </article>
 
-    <article>
-      <ComputedProperties :firstName="firstName" :lastName="lastName" />
+    <article class="card">
+      <ComputedVsMethods class="container" />
     </article>
 
-    <article>
-      <ComputedVsMethods :balance="balance" :tax="tax" />
+    <article class="card">
+      <ComputedVsWatchers class="container" />
     </article>
 
-    <article>
-      <ComputedVsWatchers />
-    </article>
+    <!-- <article class="card">
+      <UsingVuex />
+    </article> -->
   </section>
 </template>
 
 <script>
-import ComputedProperties from "./views/ComputedProperties.vue";
-import ComputedVsMethods from "./views/ComputedVsMethods.vue";
-import ComputedVsWatchers from "./views/ComputedVsWatchers.vue";
+import ComputedProperties from "./components/ComputedProperties.vue";
+import ComputedVsMethods from "./components/ComputedVsMethods.vue";
+import ComputedVsWatchers from "./components/ComputedVsWatchers.vue";
+// import UsingVuex from "./components/UsingVuex.vue";
 
 export default {
   name: "App",
@@ -29,20 +34,19 @@ export default {
     ComputedProperties,
     ComputedVsMethods,
     ComputedVsWatchers,
+    // UsingVuex,
   },
   data: () => ({
     title: "Componente Single File",
     text: "Este é um componente single file.",
     firstName: "Felipe",
     lastName: "Lucena",
-    balance: 10000,
-    tax: 0.5,
   }),
 };
 </script>
 
-<style>
-#componente-single-file {
+<style lang="css">
+/* #componente-single-file {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
@@ -54,4 +58,20 @@ ul {
   padding: 0;
   list-style: none;
 }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+} */
 </style>
